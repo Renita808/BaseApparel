@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="BaseApparelComing.css">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+          <img class="woman" src="Model.jpg" alt="pretty woman">
+    <header>
+      <img class="logo" src="BaseApparelLogo.jpg" alt="Base Apparel Logo">
+    </header>
+    <img class="woman_sm" src="Model_mobile.jpg" alt="pretty woman">
+    <div class="container">
+      <p class="text were">WE'RE</p>
+      <p class="text rest">COMING</p>
+      <p class="text rest">SOON</p>
+      <p class="blurb">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up to date with announcements and our launch date.</p>
+      <br>
+      <div class="search"
+      <form>
+        <label for=email></label>
+        <!-- can make input requried by adding required inside <input> -->
+        <input id="input" type="text" placeholder="    Email Address">
+      <button id="button" type="button" name="button"> &#8811;</button>
+      </form>
+      <p id="noInput"></p>
+      <p id="noInput1"></p>
+      <br>
+      </div> <!-- search -->
+    </div> <!-- container -->
+    <script> /*returns error if form is empty */
+    var Input = document.getElementById("input");
+    var noInput = document.getElementById("noInput");
+    var button = document.getElementById("button");
+    button.addEventListener("click", function(){
+      if (input.value.length == 0) {
+        noInput.textContent="Please enter an email address"
+      } else {
+        noInput.textContent='';
+      }
+    });
+      /*returns error if @ is missing */
+      button.addEventListener("click", function(){
+        var checkEmail = document.getElementById("input").value;
+        var include = checkEmail.includes("@");
+        if (input.value.length > 0 &&
+            !document.getElementById("input").value.includes("@")) {
+          noInput1.textContent="Please enter a valid email address"
+        } else {
+          noInput1.textContent='';
+        }
+      });
+    </script>
+  </body>
+</html>
